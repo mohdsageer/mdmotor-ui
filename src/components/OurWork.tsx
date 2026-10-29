@@ -1,4 +1,3 @@
-import React from "react";
 import { ourWorkContent, workVideos } from "./data/gargageData";
 import "./OurWork.scss";
 
