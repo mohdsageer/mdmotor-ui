@@ -106,3 +106,19 @@
     grid-column: auto;
   }
 }
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #e1306c;
+  }
+
+  svg {
+    flex-shrink: 0;
+  }
+}

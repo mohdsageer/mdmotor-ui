@@ -1,5 +1,89 @@
 
-export const garageInfo = {
+export interface GarageInfo {
+    name: string;
+    tagline: string;
+    phone: string;
+    whatsappNumber: string;
+    email: string;
+    address: string;
+    whatsappMessage: string;
+    aboutTitle: string;
+    aboutDescription: string;
+    bookingTitle: string;
+    bookingDescription: string;
+}
+
+export interface NavigationLink {
+    label: string;
+    href: string;
+}
+
+export interface HeroSlide {
+    id: string;
+    eyebrow: string;
+    title: string;
+    highlight: string;
+    description: string;
+    image: string;
+    primaryButton: string;
+    primaryLink: string;
+    secondaryButton: string;
+    secondaryLink: string;
+}
+
+export interface Service {
+    id: string;
+    icon: string;
+    title: string;
+    description: string;
+}
+
+export interface WhyChooseUsItem {
+    id: string;
+    title: string;
+    description: string;
+}
+
+export interface SectionContent {
+    servicesEyebrow: string;
+    servicesTitle: string;
+    servicesDescription: string;
+    aboutEyebrow: string;
+    whyTitle: string;
+    whyDescription: string;
+    contactEyebrow: string;
+}
+
+export interface FooterLink {
+    label: string;
+    href: string;
+}
+
+export interface FooterSection {
+    title: string;
+    links: FooterLink[];
+}
+
+export interface SocialLink {
+    label: string;
+    href: string;
+}
+
+export interface OurWorkContent {
+    eyebrow: string;
+    title: string;
+    description: string;
+    youtubeUrl: string;
+}
+
+export interface WorkVideo {
+    id: string;
+    youtube?: string;
+    title: string;
+    videoId: string;
+}
+
+export const garageInfo:GarageInfo = {
     name: "MD Motors",
     tagline: "Premium Automotive Care",
     phone: "+91 72598 28411",
@@ -15,7 +99,7 @@ export const garageInfo = {
         "Contact our team to discuss your vehicle's service requirements.",
 };
 
-export const navigationLinks = [
+export const navigationLinks:NavigationLink[] = [
     { label: "Home", href: "#home" },
     { label: "Services", href: "#services" },
     { label: "Our Work", href: "#our-work" },
@@ -23,7 +107,7 @@ export const navigationLinks = [
     { label: "Contact", href: "#contact" },
 ];
 
-export const heroSlides = [
+export const heroSlides:HeroSlide[] = [
     {
         id: "premium-cars",
         eyebrow: "WELCOME TO MD MOTORS",
@@ -68,7 +152,7 @@ export const heroSlides = [
     },
 ];
 
-export const services = [
+export const services:Service[] = [
     {
         id: "general-service",
         icon: "🔧",
@@ -134,7 +218,7 @@ export const services = [
     },
 ];
 
-export const whyChooseUs = [
+export const whyChooseUs: WhyChooseUsItem[] = [
     {
         id: "experienced-team",
         title: "Experienced Team",
@@ -157,7 +241,7 @@ export const whyChooseUs = [
     },
 ];
 
-export const sectionContent = {
+export const sectionContent: SectionContent = {
     servicesEyebrow: "WHAT WE DO",
     servicesTitle: "Our Automotive Services",
     servicesDescription:
@@ -169,7 +253,7 @@ export const sectionContent = {
     contactEyebrow: "GET IN TOUCH",
 };
 
-export const footerSections = [
+export const footerSections :FooterSection[] = [
     {
         title: "Quick Links",
         links: [
@@ -181,12 +265,12 @@ export const footerSections = [
     },
 ];
 
-export const socialLinks = [
-    // Add your real social media links here.
-    // Example: { label: "Instagram", href: "https://instagram.com/your-page" }
+
+export const socialLinks:SocialLink[] = [
+ { label: "Instagram", href: "https://instagram.com/md_motors2121?cplk=MXMyZDM0MXMzOHE4" }
 ];
 
-export const ourWorkContent = {
+export const ourWorkContent :OurWorkContent= {
     eyebrow: "OUR WORK",
     title: "See MD Motors in Action",
     description:
@@ -194,7 +278,7 @@ export const ourWorkContent = {
     youtubeUrl: "https://www.youtube.com/@Mdmotors2121",
 };
 
-export const workVideos = [
+export const workVideos: WorkVideo[] = [
     {
         id: "video-1",
         youtube:"youtube",

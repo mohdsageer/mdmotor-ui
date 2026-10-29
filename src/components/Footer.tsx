@@ -1,10 +1,11 @@
-
+import { FaInstagram } from "react-icons/fa";
 import {
   garageInfo,
   footerSections,
   socialLinks,
 } from "./data/gargageData";
 import "./Footer.scss";
+
 
 export default function Footer() {
   return (
@@ -47,8 +48,10 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
             >
-              {social.label}
+              {social.label.toLowerCase() === "instagram" && (
+                <FaInstagram size={22} />)}
             </a>
+
           ))}
         </div>
       </div>
