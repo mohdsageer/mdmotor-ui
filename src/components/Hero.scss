@@ -1,0 +1,237 @@
+
+.hero-carousel {
+  min-height: 730px;
+  height: min(76vh, 760px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #111820;
+  color: #fff;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroZoom 7s ease-in-out both;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(720px, 75%);
+  padding: 80px 0 100px 9%;
+  animation: heroTextIn 0.65s ease both;
+}
+
+.hero-eyebrow {
+  margin: 0 0 20px;
+  color: #ff766b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.06;
+  letter-spacing: -2px;
+}
+
+.hero-content h1 span {
+  color: #ff5146;
+}
+
+.hero-description {
+  max-width: 510px;
+  margin: 24px 0 30px;
+  color: #e0e5eb;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-actions a {
+  min-height: 50px;
+  padding: 15px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-2px);
+}
+
+.hero-primary {
+  background: #f04438;
+  color: #fff;
+}
+
+.hero-primary:hover {
+  background: #d93429;
+}
+
+.hero-secondary {
+  border: 1px solid rgb(255 255 255 / 55%);
+  color: #fff;
+}
+
+.hero-secondary:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
+.hero-arrow {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 50%;
+  background: rgb(0 0 0 / 25%);
+  color: #fff;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.hero-arrow:hover {
+  background: #f04438;
+}
+
+.hero-prev {
+  left: 20px;
+}
+
+.hero-next {
+  right: 20px;
+}
+
+.hero-dots {
+  position: absolute;
+  z-index: 3;
+  left: 9%;
+  bottom: 35px;
+  display: flex;
+  gap: 10px;
+}
+
+.hero-dot {
+  width: 25px;
+  height: 5px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  background: rgb(255 255 255 / 45%);
+  cursor: pointer;
+}
+
+.hero-dot.active {
+  width: 42px;
+  background: #f04438;
+}
+
+.hero-counter {
+  position: absolute;
+  right: 7%;
+  bottom: 29px;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+@keyframes heroTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-carousel {
+    min-height: 570px;
+    height: 72vh;
+    max-height: 720px;
+  }
+
+  .hero-background {
+    background-position: 60% center;
+  }
+
+  .hero-content {
+    width: 88%;
+    padding: 70px 0 100px 7%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 10vw, 58px);
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-arrow {
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+
+  .hero-prev {
+    left: auto;
+    right: 76px;
+  }
+
+  .hero-next {
+    right: 20px;
+  }
+
+  .hero-dots {
+    left: 7%;
+    bottom: 39px;
+  }
+
+  .hero-counter {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-background,
+  .hero-content {
+    animation: none;
+  }
+
+  .hero-actions a {
+    transition: none;
+  }
+}
